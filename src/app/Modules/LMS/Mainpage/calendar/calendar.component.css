@@ -1,0 +1,146 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 8vmin;
+    width: 100%;
+    z-index: 10;
+}
+
+.total-board {
+    display: flex;
+    position: sticky;
+    top: 8vmin;
+    height: 12vmin;
+    z-index: 9;
+    margin-bottom: 5vmin;
+    background-color: rgb(193, 198, 201);
+}
+
+.apply {
+    display: flex;
+    align-items: center;
+    margin-left: 10vmin;
+}
+
+.calendar-container {
+    overflow-y: auto;
+    height: calc(98vh - 20vmin); /* Adjust based on the combined height of navbar and button */
+    padding-bottom: 2vmin;
+    margin-top: 4vmin; /* Ensure space between Apply button and calendar */
+}
+
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.months {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.4vmin;
+}
+
+.month {
+    display: flex;
+    flex-direction: column;
+    width: 18%;
+    padding: 10px;
+    
+}
+
+.month-name {
+    display: flex;
+    justify-content: center;
+}
+
+.month .month-name h3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weekday {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(0.8em + 0.3vw);
+    font-weight: 500;
+}
+
+.dates-grid {
+    font-size: calc(0.7em + 0.2vw);
+}
+
+.date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.7vmin;
+}
+
+.date:hover {
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: rgba(128, 128, 128, 0.3); 
+}
+
+.date.selected {
+    border-radius: 50%;
+    background-color: rgba(15, 155, 73, 0.7);
+    width: 3vmin;
+    height: 3vmin;
+
+}
+
+.mat-grid-tile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.8vmin;
+}
+
+
+/*Media Queries*/
+@media (max-width: 768px) {
+    .month {
+        width: 45%;
+    }
+
+    .month-name {
+        font-size: calc(1em + 2vw);
+    }
+
+    .weekday {
+        font-size: calc(0.9em + 1vw);
+    }
+
+    .dates-grid {
+        font-size: calc(0.9em + 1vw);
+    }
+}
+
+@media (max-width: 500px) {
+    .month {
+        width: 100%;
+    }
+
+    .month-name {
+        font-size: calc(1em + 3vw);
+    }
+
+    .weekday {
+        font-size: calc(1em + 2vw);
+    }
+
+    .dates-grid {
+        font-size: calc(1em + 2vw);
+    }
+}

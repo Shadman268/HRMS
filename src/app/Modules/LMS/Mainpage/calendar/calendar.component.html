@@ -1,0 +1,35 @@
+<!--Navbar-->
+<mat-toolbar color="primary" class="navbar">
+  <span>LMS</span>
+  <button mat-button routerLink="/">Dashboard</button>
+  <button mat-button routerLink="/apply-leave">Overview</button>
+</mat-toolbar>
+
+<div class="total-board">
+  <div class="apply">
+    <button mat-raised-button color="primary" [disabled]="leaveService.selectedDates.length === 0" (click)="applyLeave()">Apply Leave</button>
+  </div>
+</div>
+<!-- calendar start -->
+<div class="main-container calendar-container">
+  
+  <!-- <h2>{{ currentYear }} Calendar</h2>
+  <div class="controls">
+    <button (click)="changeYear(currentYear - 1)">Previous Year</button>
+    <button (click)="changeYear(currentYear + 1)">Next Year</button>
+  </div> -->
+  <div class="months">
+    <div class="month" *ngFor="let month of months">
+      <h3 class="month-name">{{ month.name }}</h3>
+      <mat-grid-list cols="7" rowHeight="5vmin" gutterSize="10" class="no-gap">
+        <!-- Weekday Headers -->
+        <mat-grid-tile *ngFor="let day of dayNames" class="weekday">{{ day }}</mat-grid-tile>
+      </mat-grid-list>
+      <mat-grid-list cols="7" rowHeight="5vmin" gutterSize="3" class="dates-grid">
+        <!-- Empty Tiles for Days Before the First Day of the Month -->
+        <mat-grid-tile *ngFor="let _ of [].constructor(getNoOfFakeTiles(currentYear, month))"></mat-grid-tile>
+        <mat-grid-tile *ngFor="let day of month.days" class="date" [ngClass]="{'selected': isDateSelected(day, month)}" (click)="toggleDateSelection(day, month)" >{{ day.date }}</mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  </div>
+</div>
