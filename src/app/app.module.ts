@@ -10,6 +10,9 @@ import { AppComponent } from './app.component';
 import { CalendarComponent } from './Modules/LMS/Mainpage/calendar/calendar.component';
 import { ApplyleaveComponent } from './Modules/LMS/Mainpage/applyleave/applyleave.component';
 import { LoginComponent } from './login/login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +27,10 @@ import { LoginComponent } from './login/login/login.component';
     MatGridListModule,
     MatButtonModule,
     MatToolbarModule,
-    MatDialogModule
+    MatDialogModule,
+    MatInputModule,
+    MatFormFieldModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
