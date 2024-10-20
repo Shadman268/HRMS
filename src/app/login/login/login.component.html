@@ -1,9 +1,19 @@
-<form>
-    <label for="name"> Name: </label><br>
-    <input matInput id="name" type="text" [formControl]="name">
-    <br>
-    <label for="password"> Password: </label><br>
-    <input matInput id="password" type="password" [formControl]="password">
-    <br>
-    <button type="submit" (click)="onSubmit()">Login</button>
+<form class="login">
+    <table>
+        <tr>
+            <mat-form-field appearance="outline">
+                <mat-label>Name:</mat-label>
+                <input matInput placeholder="enter name" [formControl]="name">
+            </mat-form-field>
+        </tr>
+        <tr>
+            <mat-form-field appearance="outline">
+                <mat-label>Password:</mat-label>
+                <input matInput placeholder="enter password" [formControl]="password">
+            </mat-form-field>
+        </tr>
+        <tr>
+            <button mat-raised-button type="submit" (click)="onSubmit()">Login</button>
+        </tr>
+    </table>
 </form>
